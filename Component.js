@@ -1,7 +1,15 @@
 import react, { useState } from "react";
-import { StyleSheet, Switch, Text, TouchableOpacity, View } from 'react-native'
+import { SectionList, StyleSheet, Switch, Text, TouchableOpacity, View } from 'react-native'
 
 export default function Component(props) {
+
+    // Custom component fro section list
+
+    // const Item = ({ title }) => (
+    //     <View style={styles.item}>
+    //         <Text style={styles.title}>{title}</Text>
+    //     </View>
+    // )
 
     return (
 
@@ -30,6 +38,18 @@ export default function Component(props) {
         //     </View>
         // </TouchableOpacity>
 
+        // Custome component section list
+        // <View style={styles.container}>
+        //     <SectionList
+        //         sections={props.data}
+        //         keyExtractor={(itemes, index) => itemes + index}
+        //         renderItem={({ item }) => <Item title={item} />}
+        //         renderSectionHeader={({ section: { title } }) => (
+        //             <Text style={styles.header}>{title}</Text>
+        //         )}
+        //     />
+        // </View>
+
         <View style={styles.container}>
 
         </View>
@@ -52,11 +72,32 @@ const styles = StyleSheet.create({
     //     fontSize: 15
     // }
 
+    // Component Customized Section List
+    // container: {
+    //     backgroundColor: 'white',
+    //     // flex: 1,
+    //     // alignItems: 'center',
+    //     // justifyContent: 'center'    
+    //     marginTop: 40,
+    //     padding: 20
+    // },
+    // item: {
+    //     backgroundColor: 'yellow',
+    //     marginVertical: 20,
+    //     // fontSize: 15
+    //     padding: 20
+    // },
+    // title: {
+    //     fontSize: 15
+    // },
+    // header: {
+    //     fontSize: 15
+    // }
+
     // 
     container: {
         backgroundColor: 'white',
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'    
+        marginTop: 40,
+        padding: 20
     }
 })

@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { Button, ScrollView, StyleSheet, Text, TextInput, View, FlatList, TouchableOpacity, SafeAreaView, Alert, Image, TouchableWithoutFeedback, Keyboard, Modal, Switch, ActivityIndicator } from 'react-native';
+import { Button, ScrollView, StyleSheet, Text, TextInput, View, FlatList, TouchableOpacity, SafeAreaView, Alert, Image, TouchableWithoutFeedback, Keyboard, Modal, Switch, ActivityIndicator, SectionList, Pressable, RefreshControl, InputAccessoryView } from 'react-native';
 
 import Component from './Component';
 
@@ -114,6 +114,67 @@ export default function App() {
   //     setShow(false)
   //   }, 3000);
   // }
+
+  // Section List
+  // const Data = [
+  //   {
+  //     title: "Main Items",
+  //     data: ["Pizza", "Burger"]
+  //   },
+  //   {
+  //     title: 'Slides',
+  //     data: ['French Fries', 'Onion Rings']
+  //   },
+  //   {
+  //     title: 'Drinks',
+  //     data: ['Coke', 'Sprite', 'Water']
+  //   },
+  //   {
+  //     title: 'Deserts',
+  //     data: ['Ice-cream', 'Cake']
+  //   },
+  //   {
+  //     title: "Main Items",
+  //     data: ["Pizza", "Burger"]
+  //   },
+  //   {
+  //     title: 'Slides',
+  //     data: ['French Fries', 'Onion Rings']
+  //   },
+  //   {
+  //     title: 'Drinks',
+  //     data: ['Coke', 'Sprite', 'Water']
+  //   },
+  //   {
+  //     title: 'Deserts',
+  //     data: ['Ice-cream', 'Cake']
+  //   }
+  // ]
+
+  // const Items = ({title}) => (
+  //   <View style={styles.item}>
+  //     <Text style={styles.title}>{title}</Text>
+  //   </View>
+  // )
+
+  // Pressable component
+  // const [count, setCount] = useState(0)
+
+  // RefressControler
+  // const [refresh, setRefresh] = useState(false)
+
+  // const pullMe = () => {
+  //   setRefresh(true)
+  //   setTimeout(()=>{
+  //     setRefresh(false)
+  //   },3000)
+  // }
+
+  // InputAccessoryView : Only for IOS devices
+  // const [name, setName] = useState('')
+  // const InputAccessaryViewId = 'id'
+
+
 
   return (
 
@@ -325,9 +386,64 @@ export default function App() {
     //   <ActivityIndicator size='large' color='red' animating={show} />
     // </View>
 
+    // Section list
+    // <View style={styles.container}>
+    //   <SectionList 
+    //     sections={Data}
+    //     keyExtractor={(itemes,index)=>itemes+index}
+    //     renderItem={({item})=><Items title={item}/>}
+    //     renderSectionHeader={({section:{title}})=>(
+    //       <Text style={styles.header}>{title}</Text>
+    //     )}
+    //   />
+    //   {/* <Text>Hello World!</Text> */}
+    // </View>
+
+    // Custmozed Component fro Section list
+    // <View style={styles.container}>
+    //   <Component data={Data}/>
+    // </View>
+
+    // Pressablr component trial
+    // <View style={styles.container}>
+    //   <Pressable style={({pressed})=>[{backgroundColor: pressed ? 'yellow' : 'red'},styles.text]} onPress={()=>setCount(count+1)}>
+    //     {({pressed})=><Text>{pressed? 'Pressed':'Press Me'}</Text>}
+    //   </Pressable>
+    // </View>
+
+    // RefressControler
+    // <View style={styles.container}>
+    //   <ScrollView 
+    //     refreshControl={
+    //       <RefreshControl
+    //         refreshing={refresh}
+    //         onRefresh={pullMe}
+    //       />
+    //     }
+    //   >
+    //     <Text>Pulll to Refresh</Text>
+    //   </ScrollView>
+    // </View>
+
+    // InputAccessoryView : Only for IOS devices
+    // <View style={styles.container}>
+    //   <TextInput
+    //     style={styles.input}
+    //     onChangeText={(item) => setName(item)}
+    //     placeholder='Enter Your Name' 
+    //     value={name}
+    //     inputAccessoryViewID={InputAccessaryViewId}
+    //   />
+    //   <InputAccessoryView nativeID={InputAccessaryViewId}>
+    //     <Button title='Clear' 
+    //       onPress={()=>setName('')}
+    //     />
+    //   </InputAccessoryView>
+    // </View>
+
     // 
     <View style={styles.container}>
-      <Text>Hello World!</Text>
+
     </View>
   );
 }
@@ -553,11 +669,64 @@ const styles = StyleSheet.create({
   //   borderRadius: 20
   // }
 
+  // Section List
+  // container: {
+  //   // flex: 1,
+  //   // alignItems: 'center',
+  //   // justifyContent: 'center',
+  //   backgroundColor: 'white',
+  //   marginTop: 40,
+  //   padding: 20,
+  // },
+  // item: {
+  //   backgroundColor: 'yellow',
+  //   padding: 20,
+  //   marginVertical: 10
+  // },
+  // header: {
+  //   fontSize: 30,
+  // },
+  // title: {
+  //   fontSize: 25
+  // }
+
+  // Pressable Controler
+  // container: {
+  //   backgroundColor: 'white',
+  //   marginTop: 40,
+  //   padding: 20
+  // },
+  // text: {
+  //   padding: 20,
+  //   marginVertical: 10
+  // }
+
+  // RefressControler
+  // container: {
+  //   backgroundColor: 'red',
+  //   marginTop: 40,
+  //   padding: 20,
+  //   flex: 1
+  // },
+
+  // InputAccessaryView : Only for IOS devices
+  // container: {
+  //   backgroundColor: 'white',
+  //   marginTop: 40,
+  //   padding: 20
+  // },
+  // input: {
+  //   backgroundColor: 'pink',
+  //   padding: 20,
+  //   borderRadius: 15,
+  //   marginTop: 20
+  // }
+
+  // 
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    padding: 20,
+    marginTop: 40
   }
 
 });
