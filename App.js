@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { Button, ScrollView, StyleSheet, Text, TextInput, View, FlatList, TouchableOpacity, SafeAreaView, Alert, Image, TouchableWithoutFeedback, Keyboard, Modal, Switch, ActivityIndicator, SectionList, Pressable, RefreshControl, InputAccessoryView } from 'react-native';
+import { Button, ScrollView, StyleSheet, Text, TextInput, View, FlatList, TouchableOpacity, SafeAreaView, Alert, Image, TouchableWithoutFeedback, Keyboard, Modal, Switch, ActivityIndicator, SectionList, Pressable, RefreshControl, InputAccessoryView, TouchableNativeFeedback, ToastAndroid, Appearance, useColorScheme } from 'react-native';
 
 import Component from './Component';
 
@@ -174,6 +174,44 @@ export default function App() {
   // const [name, setName] = useState('')
   // const InputAccessaryViewId = 'id'
 
+  // Touchable Native Feedback
+  // const [rippleOverFlow, setrippleOverFlow] = useState(false)
+
+  // toast android
+  // const showTost = () => {
+  //   ToastAndroid.show('Welcome to React Native Toast',ToastAndroid.SHORT)
+  // }
+
+  // const showTostWithGravity = () => {
+  //   ToastAndroid.showWithGravity('Welcome to React Native Gravity',ToastAndroid.SHORT, ToastAndroid.CENTER)
+  // }
+
+  // const showTostWithGravityandOffset = () => {
+  //   ToastAndroid.showWithGravityAndOffset('Welcome to React Native Gravity and Offset', ToastAndroid.LONG,ToastAndroid.BOTTOM,30,50)
+  // }
+
+  // Apperences //Light and Dark Mode
+  // const [name, setName] = useState('')
+  // const [age, setAge] = useState('')
+
+  // const [theme, setTheme] = useState(Appearance.getColorScheme())
+  // Appearance.addChangeListener((schema) => {
+  //   console.log(schema.colorScheme)
+  //   setTheme(schema.colorScheme)
+  // })
+
+  // const theme = useColorScheme()
+
+  // const colorScheme = Appearance.getColorScheme()
+  // useEffect(()=>{
+  //   const colorTheme = Appearance.getColorScheme()
+  //   console.log(colorTheme)
+  //   setTheme(colorTheme)
+
+  // },[])
+  // const theme = useColorScheme()
+
+  // 
 
 
   return (
@@ -441,10 +479,53 @@ export default function App() {
     //   </InputAccessoryView>
     // </View>
 
+    // Text Props
+    // <View style={styles.container}>
+    //   <ScrollView>
+    //     <Text style={styles.text}>Naveen Kumar Gowda (born 8 January 1986), better known by his stage name Yash, is an Indian actor who works in Kannada films. He is the recipient of three Filmfare Awards South. Yash began his career with appearances in several television series in the 2000s. He made his film debut in 2007 with Jambada Hudugi. The 2008 romantic drama Moggina Manasu, for which he received the Filmfare Award for Best Supporting Actor, proved to be a breakthrough for Yash. His first film in a leading role, Rocky (2008), was an excellent musical original film with good music[1] in which S. P. Balasubrahmanyam has sung a duet with Priyadarshini which was last song of SPB for the younger generation hero [2] where Yash got the name "Rocky Bhai"[3] But movie met with negative response with many critics who tried to compare it with different languages film.[4] He followed it up with a series of romance films that were commercial successes, and received his first Filmfare Award for Best Actor nomination for Drama in 2012.</Text>
+    //   </ScrollView>
+    // </View>
+
+    // View Style Props
+    // <View style={styles.container}>
+    //   <Image 
+    //     source={require('./assets/favicon.png')} style={styles.image}
+    //     resizeMode={'contain'}
+    //   />
+    // </View>
+
+    // Touchable Native Feedback
+    // <View style={styles.container}>
+    //   <TouchableNativeFeedback 
+    //     onPress={()=>setrippleOverFlow(!rippleOverFlow)}
+    //     background={TouchableNativeFeedback.Ripple('red',rippleOverFlow)}
+    //   >
+    //     <View style={styles.touchable}>
+    //       <Text style={styles.text}>Touchable Native feedback</Text>
+    //     </View>
+    //   </TouchableNativeFeedback>
+    // </View>
+
+    // toast android
+    // <View style={styles.container}>
+    //   <Button title='Show Toast' onPress={showTost}/>
+    //   <Button title='Show Toast with Gravity' onPress={showTostWithGravity}/>
+    //   <Button title='Show Toast with Gravity and Offset' onPress={showTostWithGravityandOffset}/>
+    // </View>
+
+    // Apperences
+    // <View style={[{ backgroundColor: theme === 'light' ? 'white' : 'gray' }, styles.container]}>
+    //   {console.log({ theme })}
+    //   <TextInput onChangeText={(item) => setName(item)} placeholderTextColor={theme === 'light' ? '#DEE2E6' : '#495057'} placeholder='Enter Your Name' style={[{ backgroundColor: theme === 'light' ? 'gray' : 'white', color: theme === 'light' ? 'white' : 'black' }, styles.input]} />
+    //   <TextInput onChangeText={(item) => setAge(item)} placeholderTextColor={theme === 'light' ? '#DEE2E6' : '#495057'} placeholder='Enter Your Age' style={[{ backgroundColor: theme === 'light' ? 'gray' : 'white', color: theme === 'light' ? 'white' : 'black' }, styles.input]} />
+    //   <Text style={[{ color: theme === 'light' ? 'black' : 'white' }, styles.text]}>{name} {age}</Text>
+    // </View>
+
     // 
     <View style={styles.container}>
 
     </View>
+
   );
 }
 
@@ -722,11 +803,103 @@ const styles = StyleSheet.create({
   //   marginTop: 20
   // }
 
+  // Text Props
+  // container: {
+  //   backgroundColor: 'red',
+  //   padding: 20,
+  //   marginTop: 40
+  // },
+  // text: {
+  //   color: 'yellow',
+  //   fontFamily: 'Arial',
+  //   fontStyle: 'italic',
+  //   fontWeight: '100',
+  //   letterSpacing: 2,
+  //   textAlign: 'justify',
+  //   textDecorationLine: 'underline',
+  //   textDecorationColor: 'black',
+  //   textDecorationStyle: 'dotted',
+  //   textTransform: 'capitalize',
+  //   fontSize: 20
+  // }
+
+  // View props
+  // container: {
+  //   backgroundColor: 'red',
+  //   flex: 1,
+  //   padding: 20,
+  //   margin: 40,
+  //   borderBottomWidth: 10,
+  //   borderTopWidth: 20,
+  //   borderRightWidth: 30,
+  //   borderLeftWidth: 40,
+  //   borderRadius: 50,
+  //   borderColor: 'yellow',
+  //   opacity: 0.7
+  // }
+
+  // Image props
+  // container: {
+  //   backgroundColor: 'white',
+  //   padding: 20,
+  //   marginTop: 40
+  // },
+  // image: {
+  //   height: 200,
+  //   width: 200,
+  //   tintColor: 'pink'
+  // }
+
+  // Touchable Native Feedback
+  // container: {
+  //   backgroundColor: 'white',
+  //   padding: 20,
+  //   // marginTop: 40,
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  //   flex: 1
+  // },
+  // touchable: {
+  //   flex: 0.5,
+  //   borderColor: 'black',
+  //   borderWidth: 1,
+
+  // },
+  // text: {
+  //   fontSize: 20,
+  //   alignSelf: 'center'
+  // }
+
+  // tost android
+  // container: {
+  //   backgroundColor: 'white',
+  //   padding: 20,
+  //   marginTop: 40
+  // }
+
+  // Apperences
+  // container: {
+  //   flex: 1,
+  //   padding: 20,
+  //   paddingTop: 40
+  //   // marginTop: 40
+  // },
+  // text: {
+  //   fontSize: 20,
+  //   marginTop: 20,
+  //   alignSelf: 'center'
+  // },
+  // input: {
+  //   marginTop: 20,
+  //   padding: 20,
+  //   fontSize: 20,
+  //   borderRadius: 15
+  // }
+
   // 
   container: {
-    backgroundColor: 'white',
+    marginTop: 40,
     padding: 20,
-    marginTop: 40
+    backgroundColor: 'white'
   }
-
 });
