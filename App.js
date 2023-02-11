@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { useEffect, useState } from 'react';
-import { Button, ScrollView, StyleSheet, Text, TextInput, View, FlatList, TouchableOpacity, SafeAreaView, Alert, Image, TouchableWithoutFeedback, Keyboard, Modal, Switch, ActivityIndicator, SectionList, Pressable, RefreshControl, InputAccessoryView, TouchableNativeFeedback, ToastAndroid, Appearance, useColorScheme } from 'react-native';
+import { useEffect, useRef, useState } from 'react';
+import { Button, ScrollView, StyleSheet, Text, TextInput, View, FlatList, TouchableOpacity, SafeAreaView, Alert, Image, TouchableWithoutFeedback, Keyboard, Modal, Switch, ActivityIndicator, SectionList, Pressable, RefreshControl, InputAccessoryView, TouchableNativeFeedback, ToastAndroid, Appearance, useColorScheme, Platform, Animated, PlatformColor, DrawerLayoutAndroid } from 'react-native';
 
 import Component from './Component';
 
@@ -210,6 +210,45 @@ export default function App() {
 
   // },[])
   // const theme = useColorScheme()
+
+  // Animited Library
+  // const fadeAnimation = useRef(new Animated.Value(0)).current
+
+  // const fadein = () => {
+  //   Animated.timing(fadeAnimation, {
+  //     toValue: 1,
+  //     duration: 5000,
+  //     useNativeDriver: true,
+  //   }).start()
+  // }
+
+  // const fadeout = () => {
+  //   Animated.timing(fadeAnimation, {
+  //     toValue: 0,
+  //     duration: 5000,
+  //     useNativeDriver: true,
+  //   }).start()
+  // }
+
+  // Drawer for android
+  // const drawer = useRef(null)
+  // const [drawerPosition, setDrawerPosition] = useState('left')
+
+  // const changeDrawerPosition = () => {
+  //   if (drawerPosition === 'left') {
+  //     setDrawerPosition('right')
+  //   }
+  //   else {
+  //     setDrawerPosition('left')
+  //   }
+  // }
+
+  // const navigationView = () => (
+  //   <View style={[styles.container, styles.navigationContainer]}>
+  //     <Text style={styles.paragraph}>I am in the Drawer</Text>
+  //     <Button title='Close Dhrover' onPress={() => drawer.current.closeDrawer()} />
+  //   </View>
+  // )
 
   // 
 
@@ -520,6 +559,58 @@ export default function App() {
     //   <TextInput onChangeText={(item) => setAge(item)} placeholderTextColor={theme === 'light' ? '#DEE2E6' : '#495057'} placeholder='Enter Your Age' style={[{ backgroundColor: theme === 'light' ? 'gray' : 'white', color: theme === 'light' ? 'white' : 'black' }, styles.input]} />
     //   <Text style={[{ color: theme === 'light' ? 'black' : 'white' }, styles.text]}>{name} {age}</Text>
     // </View>
+
+    // gather user device information
+    // <View style={styles.container}>
+    //   <Text style={styles.text}>OS: {Platform.OS}</Text>
+    //   <Text style={styles.text}>OS Version: {Platform.Version}</Text>
+    //   <Text style={styles.text}>OS is TV or not: {Platform.isTV.toString()}</Text>
+
+    //   {Platform.OS === 'ios' && <>
+    //     <Text style={styles.text}>OS is iPad or not: {Platform.isPad.toString()}</Text>
+    //     </>
+    //   }
+
+    //   <Text style={styles.text}>Constant: {JSON.stringify(Platform.constants,null,2)}</Text>
+    // </View>
+
+    // Animated Library
+    // <View style={styles.container}>
+    //   <Animated.View
+    //     style={[styles.fading, { opacity: fadeAnimation }]}
+    //   >
+
+    //     <Text style={styles.fadingText}>Fading View</Text>
+    //   </Animated.View>
+    //   <View style={styles.buttonRow}>
+    //     <Button title='Fade In' onPress={fadein} />
+    //     <Button title='Fade Out' onPress={fadeout} />
+    //   </View>
+    // </View>
+
+    // platform color component
+    // <View style={styles.container}>
+    //   <Text style={styles.label}>
+    //     I am a platform color
+    //   </Text>
+    // </View>
+
+    // Drawer only for android
+    // <DrawerLayoutAndroid
+    //   ref={drawer}
+    //   drawerWidth={300}
+    //   drawerPosition={drawerPosition}
+    //   renderNavigationView={navigationView}
+    // >
+    //   <View style={styles.container}>
+
+    //     <Text style={styles.paragraph}>Drawer on the {drawerPosition}</Text>
+    //     <Button title='Change Drawer Position' onPress={() => changeDrawerPosition()} />
+    //     <Text style={styles.paragraph}>Swipe from the side or press a button</Text>
+    //     <Button title='Open Drawer' onPress={() => drawer.current.openDrawer()} />
+
+    //   </View>
+    // </DrawerLayoutAndroid>
 
     // 
     <View style={styles.container}>
@@ -896,7 +987,80 @@ const styles = StyleSheet.create({
   //   borderRadius: 15
   // }
 
+  // platform infromation
+  // container: {
+  //   marginTop: 40,
+  //   padding: 20,
+  //   backgroundColor: 'white'
+  // },
+  // text: {
+  //   fontSize: 20
+  // }
+
   // 
+  // container: {
+  //   marginTop: 40,
+  //   backgroundColor: 'white',
+  //   padding: 20,
+  //   flex: 1
+  // },
+  // fading: {
+  //   padding: 20,
+  //   backgroundColor: 'yellow'
+  // },
+  // fadingText: {
+  //   fontSize: 30,
+
+  // },
+  // buttonRow: {
+  //   justifyContent: 'center',
+  //   marginVertical: 50
+  // }
+
+  // 
+  // container: {
+  //   marginTop: 40,
+  //   backgroundColor: 'white',
+  //   padding: 20
+  // },
+  // label: {
+  //   padding: 20,
+  //   ...Platform.select(
+  //     {
+  //       ios: {
+  //         color: PlatformColor('label'),
+  //         backgroundColor: PlatformColor('systemTealColor'),
+  //       },
+  //       android: {
+  //         color: PlatformColor('?android:attr/textColor'),
+  //         backgroundColor: PlatformColor('@android:color/holo_blue_bright'),
+  //       },
+  //       default: {
+  //         color: 'black'
+  //       }
+  //     }
+  //   )
+  // },
+
+  // Drawer only for android
+//   container: {
+//     // marginTop: 40,
+//     // padding: 20,
+//     // backgroundColor: 'white'
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center'
+//   },
+//   navigationContainer: {
+//     backgroundColor: 'white',
+//   },
+//   paragraph: {
+//     padding: 15,
+//     fontSize: 15,
+//     textAlign: 'center'
+//   }
+
+// 
   container: {
     marginTop: 40,
     padding: 20,
